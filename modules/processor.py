@@ -73,3 +73,14 @@ def calculate_recovery_score(df):
     # Return the modified DataFrame
     return df
 
+# Function to process data and add Recovery Score
+def process_data():
+    # Load and clean the data using load_data()
+    df = load_data()
+
+    # Calculate recovery scores using calculate_recovery_score()
+    df = calculate_recovery_score(df)
+
+    # Return the final processed DataFrame
+    return df
+
