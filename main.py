@@ -1,24 +1,27 @@
 import streamlit as st
 
 # ----------- PAGE CONFIG -----------
+
 st.set_page_config(
     page_title="FitSync",
     layout="wide"
 )
+
+
+# ----------- THEME COLORS -----------
+from components.theme_switcher import apply_theme
+
+apply_theme()
+
+
+
 
 # ----------- SESSION STATE -----------
 if "dark_mode" not in st.session_state:
     st.session_state.dark_mode = True
 
 # ----------- HEADER -----------
-col1, col2 = st.columns([8, 1])
-
-with col1:
-    st.title("💪 FitSync Dashboard")
-
-with col2:
-    toggle = st.toggle("🌙 Dark Mode", value=st.session_state.dark_mode)
-    st.session_state.dark_mode = toggle
+st.title("💪 FitSync Dashboard")
 
 # ----------- THEME COLORS -----------
 if st.session_state.dark_mode:
